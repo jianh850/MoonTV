@@ -584,7 +584,7 @@ function PlayPageClient() {
       setCurrentId(detailData.id);
       setVideoYear(detailData.year);
       setVideoTitle(detailData.title || videoTitleRef.current);
-      setVideoCover(detailData.poster);
+      setVideoCover(processImageUrl(detailData.poster || ''));
       setDetail(detailData);
       if (currentEpisodeIndex >= detailData.episodes.length) {
         setCurrentEpisodeIndex(0);
@@ -705,7 +705,7 @@ function PlayPageClient() {
 
       setVideoTitle(newDetail.title || newTitle);
       setVideoYear(newDetail.year);
-      setVideoCover(newDetail.poster);
+      setVideoCover(processImageUrl(newDetail.poster || ''));
       setCurrentSource(newSource);
       setCurrentId(newId);
       setDetail(newDetail);
